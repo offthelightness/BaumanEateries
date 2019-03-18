@@ -1,5 +1,6 @@
 package me.glagolev.baumaneateries.features.menu.viewmodel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.Observable;
@@ -20,6 +21,12 @@ public class MenuListViewModel extends BaseViewModel {
     }
 
     private void load() {
-        // :)
+        List<Object> objects = new ArrayList<Object>() {
+            {
+                add(new Object());
+                add(new Object());
+            }
+        };
+        menuSubjects.onNext(objects);
     }
 }

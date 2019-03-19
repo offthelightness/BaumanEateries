@@ -27,7 +27,7 @@ public class MenuActivity extends BaseActivity {
     }
 
     private void parseIntent(@NonNull Intent intent) {
-        EateryType eateryType = (EateryType) intent.getSerializableExtra(Screens.MenuScreen.KEY_EATERY_TYPE);
+        EateryType eateryType = (EateryType) intent.getSerializableExtra(Screens.KEY_EATERY_TYPE);
         router.replaceScreen(new Screens.MenuListScreen(eateryType));
     }
 }

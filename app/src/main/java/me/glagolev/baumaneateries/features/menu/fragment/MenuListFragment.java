@@ -31,7 +31,7 @@ public class MenuListFragment extends BaseFragment {
         MenuListFragment fragment = new MenuListFragment();
 
         Bundle args = new Bundle();
-        args.putSerializable(Screens.MenuScreen.KEY_EATERY_TYPE, type);
+        args.putSerializable(Screens.KEY_EATERY_TYPE, type);
         fragment.setArguments(args);
 
         return fragment;

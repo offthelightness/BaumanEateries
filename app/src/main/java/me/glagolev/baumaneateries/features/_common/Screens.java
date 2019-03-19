@@ -5,13 +5,15 @@ import android.content.Intent;
 
 import androidx.fragment.app.Fragment;
 import me.glagolev.baumaneateries.features.eateries.fragment.EateriesListFragment;
-import me.glagolev.baumaneateries.features.eateries.fragment.EateryDetailFragment;
+import me.glagolev.baumaneateries.features.eateries.fragment.EateryDetailsFragment;
 import me.glagolev.baumaneateries.features.eateries.model.EateryType;
 import me.glagolev.baumaneateries.features.menu.activity.MenuActivity;
 import me.glagolev.baumaneateries.features.menu.fragment.MenuListFragment;
 import ru.terrakok.cicerone.android.support.SupportAppScreen;
 
 public class Screens {
+
+    public static final String KEY_EATERY_TYPE = "KEY_EATERY_TYPE";
 
     // eateries feature navigation
     public static final class EateriesListScreen extends SupportAppScreen {
@@ -21,17 +23,22 @@ public class Screens {
         }
     }
 
-    public static final class EateryDetailScreen extends SupportAppScreen {
+    public static final class EateryDetailsScreen extends SupportAppScreen {
+
+        EateryType type;
+
+        public EateryDetailsScreen(EateryType type) {
+            this.type = type;
+        }
+
         @Override
         public Fragment getFragment() {
-            return new EateryDetailFragment();
+            return EateryDetailsFragment.newInstance(type);
         }
     }
 
     // menu feature navigation
     public static final class MenuScreen extends SupportAppScreen {
-
-        public static final String KEY_EATERY_TYPE = "KEY_EATERY_TYPE";
 
         EateryType type;
 

@@ -10,6 +10,7 @@ import java.util.List;
 import me.glagolev.baumaneateries.R;
 import me.glagolev.baumaneateries.core.repo.BaseRepository;
 import me.glagolev.baumaneateries.features.eateries.model.Eatery;
+import me.glagolev.baumaneateries.features.eateries.model.EateryType;
 
 public class EateriesRepository extends BaseRepository {
 
@@ -27,5 +28,13 @@ public class EateriesRepository extends BaseRepository {
 
     public List<Eatery> getEateries() {
         return gson.fromJson(readJsonFile(context.getResources().openRawResource(R.raw.eateries)), new TypeToken<List<Eatery>>() {}.getType());
+    }
+
+    public Eatery getEatery(EateryType type) {
+        List<Eatery> eateryList = gson.fromJson(readJsonFile(context.getResources().openRawResource(R.raw.eateries)), new TypeToken<List<Eatery>>() {}.getType());
+        for (Eatery e: eateryList) {
+            if (e.getType() == type) return e;
+        }
+        throw new IllegalStateException("eatery with type" + type + " not found");
     }
 }

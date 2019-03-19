@@ -12,18 +12,22 @@ import androidx.recyclerview.widget.RecyclerView;
 import io.reactivex.Observable;
 import io.reactivex.subjects.BehaviorSubject;
 import me.glagolev.baumaneateries.R;
+import me.glagolev.baumaneateries.features.menu.model.Dish;
 
 public class MenuRecyclerViewAdapter extends RecyclerView.Adapter<MenuRecyclerViewAdapter.MenuViewHolder> {
 
-    private BehaviorSubject<Object> clickMenuSubject = BehaviorSubject.create();
-    private List<Object> data = new ArrayList<>();
+    private BehaviorSubject<Dish> clickDishSubject = BehaviorSubject.create();
+    private List<Dish> data = new ArrayList<>();
 
-    public void setData(List<Object> data) {
+    public void setData(List<Dish> data) {
         this.data = data;
+        for (Dish d: data) {
+            System.out.println(d);
+        }
     }
 
-    public Observable<Object> getClickMenuObservable() {
-        return clickMenuSubject.hide();
+    public Observable<Dish> getClickDishObservable() {
+        return clickDishSubject.hide();
     }
 
     @NonNull
@@ -31,7 +35,7 @@ public class MenuRecyclerViewAdapter extends RecyclerView.Adapter<MenuRecyclerVi
     public MenuViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         MenuViewHolder menuViewHolder = new MenuViewHolder(LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_menu, parent, false));
-        menuViewHolder.itemView.setOnClickListener(v -> clickMenuSubject.onNext(new Object()));
+        menuViewHolder.itemView.setOnClickListener(v -> clickDishSubject.onNext(data.get(menuViewHolder.getAdapterPosition())));
         return menuViewHolder;
     }
 

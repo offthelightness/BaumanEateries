@@ -18,6 +18,7 @@ import me.glagolev.baumaneateries.core.rx.SimpleDisposable;
 import me.glagolev.baumaneateries.features._common.Screens;
 import me.glagolev.baumaneateries.features.eateries.model.EateryType;
 import me.glagolev.baumaneateries.features.menu.MenuRecyclerViewAdapter;
+import me.glagolev.baumaneateries.features.menu.model.Dish;
 import me.glagolev.baumaneateries.features.menu.viewmodel.MenuListViewModel;
 
 public class MenuListFragment extends BaseFragment {
@@ -68,11 +69,11 @@ public class MenuListFragment extends BaseFragment {
         addDisposables(
                 viewModel
                         .getMenuObservable()
-                        .subscribeWith(new SimpleDisposable<List<Object>>() {
+                        .subscribeWith(new SimpleDisposable<List<Dish>>() {
                             @Override
-                            public void onNext(List<Object> objects) {
-                                super.onNext(objects);
-                                adapter.setData(objects);
+                            public void onNext(List<Dish> dishes) {
+                                super.onNext(dishes);
+                                adapter.setData(dishes);
                                 adapter.notifyDataSetChanged();
                             }
                         })

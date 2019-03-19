@@ -1,16 +1,23 @@
 package me.glagolev.baumaneateries.features.menu.model;
 
-import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 import me.glagolev.baumaneateries.features.eateries.model.EateryType;
 
 public class Dish {
+
+    private String id;
     private String name;
     private Integer weight;
     private Integer cost;
     private EateryType eateryType;
-    private LinkedHashMap<DishElements, Integer> elements;
+    private List<DishElements> elements;
     private Integer calorie;
+
+    public String getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
@@ -28,11 +35,25 @@ public class Dish {
         return eateryType;
     }
 
-    public LinkedHashMap<DishElements, Integer> getElements() {
+    public List<DishElements> getElements() {
         return elements;
     }
 
     public Integer getCalorie() {
         return calorie;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Dish{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", weight=" + weight +
+                ", cost=" + cost +
+                ", eateryType=" + eateryType +
+                ", elements=" + elements +
+                ", calorie=" + calorie +
+                '}';
     }
 }

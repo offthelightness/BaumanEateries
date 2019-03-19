@@ -25,6 +25,7 @@
         <activity
                 android:name=".features.menu.activity.MenuActivity"
                 android:theme="@style/AppThemeNoActionBar"/>
+        <activity android:name=".features.order.activity.OrderActivity" />
     </application>
 
 </manifest>

@@ -1,11 +1,11 @@
 package me.glagolev.baumaneateries.features.menu.model;
 
-public class DishElements {
+public class DishElement {
 
-    private Elements element;
+    private Element element;
     private Integer count;
 
-    public Elements getElement() {
+    public Element getElement() {
         return element;
     }
 

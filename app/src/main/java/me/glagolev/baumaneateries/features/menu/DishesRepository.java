@@ -30,12 +30,4 @@ public class DishesRepository extends BaseRepository {
     public List<Dish> getDishes() {
         return gson.fromJson(readJsonFile(context.getResources().openRawResource(R.raw.dishes)), new TypeToken<List<Dish>>() {}.getType());
     }
-
-   /* public Eatery getEatery(EateryType type) {
-        List<Dish> eateryList = gson.fromJson(readJsonFile(context.getResources().openRawResource(R.raw.eateries)), new TypeToken<List<Eatery>>() {}.getType());
-        for (Dish e: eateryList) {
-            if (e.getType() == type) return e;
-        }
-        throw new IllegalStateException("eatery with type" + type + " not found");
-    }*/
 }

@@ -1,7 +1,6 @@
 package me.glagolev.baumaneateries.features.menu.model;
 
 import java.util.List;
-import java.util.Map;
 
 import me.glagolev.baumaneateries.features.eateries.model.EateryType;
 
@@ -10,9 +9,9 @@ public class Dish {
     private String id;
     private String name;
     private Integer weight;
-    private Integer cost;
+    private Integer price;
     private EateryType eateryType;
-    private List<DishElements> elements;
+    private List<DishElement> elements;
     private Integer calorie;
 
     public String getId() {
@@ -27,16 +26,25 @@ public class Dish {
         return weight;
     }
 
-    public Integer getCost() {
-        return cost;
+    public Integer getPrice() {
+        return price;
     }
 
     public EateryType getEateryType() {
         return eateryType;
     }
 
-    public List<DishElements> getElements() {
+    public List<DishElement> getElements() {
         return elements;
+    }
+
+    public Integer getElementCount(Element element) {
+        for (DishElement dishElement: elements) {
+            if (dishElement.getElement() == element) {
+                return dishElement.getCount();
+            }
+        }
+        throw new IllegalArgumentException("unknown Element " + element);
     }
 
     public Integer getCalorie() {
@@ -50,7 +58,7 @@ public class Dish {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", weight=" + weight +
-                ", cost=" + cost +
+                ", price=" + price +
                 ", eateryType=" + eateryType +
                 ", elements=" + elements +
                 ", calorie=" + calorie +

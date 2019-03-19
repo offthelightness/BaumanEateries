@@ -1,7 +1,7 @@
 package me.glagolev.baumaneateries.features.menu.model;
 
-public enum Elements {
+public enum Element {
     PROTEIN,
-    TRIGLYCERIDE,
+    FAT,
     CARBOHYDRATE
 }

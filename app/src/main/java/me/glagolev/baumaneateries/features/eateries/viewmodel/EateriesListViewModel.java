@@ -2,7 +2,10 @@ package me.glagolev.baumaneateries.features.eateries.viewmodel;
 
 import android.app.Application;
 
+import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import androidx.annotation.NonNull;
 import io.reactivex.Observable;
@@ -15,6 +18,9 @@ import me.glagolev.baumaneateries.features.eateries.model.Eatery;
 import me.glagolev.baumaneateries.features.eateries.model.EateryType;
 
 public class EateriesListViewModel extends BaseViewModel {
+
+    private Map<EateryType, String> formattedScheduleMap = new HashMap<>();
+
 
     private EateriesRepository eateriesRepository;
 
@@ -44,5 +50,13 @@ public class EateriesListViewModel extends BaseViewModel {
 
     public void openEateryDetails(EateryType type) {
         router.navigateTo(new Screens.EateryDetailsScreen(type));
+    }
+
+    public Map<EateryType, String> getFormattedMap(List<Eatery> eateries) {
+        int currentTime = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+        for (int i = 0; i < eateries.size(); i++) {
+            formattedScheduleMap.put(eateries.get(i).getType(), String.format(currentTime >= eateries.get(i).getOpenFrom() && currentTime < eateries.get(i).getClosedTo() ? "Открыто до %s" : "Закрыто", eateries.get(i).getClosedTo()));
+        }
+        return formattedScheduleMap;
     }
 }

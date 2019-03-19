@@ -100,13 +100,12 @@ public class EateryDetailsFragment extends BaseFragment {
         tvLocation.setText(eatery.getLocation());
         tvDescription.setText(eatery.getDescription());
 
-        int dayFrom = eatery.getDayFrom(), dayTo = eatery.getDayTo();
-        tvScheduleDay1.setText(String.format("понедельник - " + (dayFrom <= 1 && dayTo >= 1 ? "c %s до %s" : "закрыто"), eatery.getOpenFrom(), eatery.getClosedTo()));
-        tvScheduleDay2.setText(String.format("вторник - " + (dayFrom <= 2 && dayTo >= 2 ? "c %s до %s" : "закрыто"), eatery.getOpenFrom(), eatery.getClosedTo()));
-        tvScheduleDay3.setText(String.format("среда - " + (dayFrom <= 3 && dayTo >= 3 ? "c %s до %s" : "закрыто"), eatery.getOpenFrom(), eatery.getClosedTo()));
-        tvScheduleDay4.setText(String.format("четверг - " + (dayFrom <= 4 && dayTo >= 4 ? "c %s до %s" : "закрыто"), eatery.getOpenFrom(), eatery.getClosedTo()));
-        tvScheduleDay5.setText(String.format("пятница - " + (dayFrom <= 5 && dayTo >= 5 ? "c %s до %s" : "закрыто"), eatery.getOpenFrom(), eatery.getClosedTo()));
-        tvScheduleDay6.setText(String.format("суббота - " + (dayFrom <= 6 && dayTo >= 6 ? "c %s до %s" : "закрыто"), eatery.getOpenFrom(), eatery.getClosedTo()));
-        tvScheduleDay7.setText(String.format("воскресенье - " + (dayFrom <= 7 && dayTo >= 7 ? "c %s до %s" : "закрыто"), eatery.getOpenFrom(), eatery.getClosedTo()));
+        tvScheduleDay1.setText(viewModel.getScheduleFormattedString(1, eatery));
+        tvScheduleDay2.setText(viewModel.getScheduleFormattedString(2, eatery));
+        tvScheduleDay3.setText(viewModel.getScheduleFormattedString(3, eatery));
+        tvScheduleDay4.setText(viewModel.getScheduleFormattedString(4, eatery));
+        tvScheduleDay5.setText(viewModel.getScheduleFormattedString(5, eatery));
+        tvScheduleDay6.setText(viewModel.getScheduleFormattedString(6, eatery));
+        tvScheduleDay7.setText(viewModel.getScheduleFormattedString(7, eatery));
     }
 }

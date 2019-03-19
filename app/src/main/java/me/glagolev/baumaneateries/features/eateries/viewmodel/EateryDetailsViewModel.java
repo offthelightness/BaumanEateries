@@ -39,10 +39,32 @@ public class EateryDetailsViewModel extends BaseViewModel {
     }
 
     public String getScheduleFormattedString(int dayOfWeek, Eatery eatery) {
+        String prefix;
         switch (dayOfWeek) {
-
+            case 1:
+                prefix = "понедельник - ";
+                break;
+            case 2:
+                prefix = "вторник - ";
+                break;
+            case 3:
+                prefix = "среда - ";
+                break;
+            case 4:
+                prefix = "четверг - ";
+                break;
+            case 5:
+                prefix = "пятница - ";
+                break;
+            case 6:
+                prefix = "суббота - ";
+                break;
+            case 7:
+                prefix = "воскресенье - ";
+                break;
             default:
                 return null;
         }
+        return String.format(prefix + (eatery.getDayFrom() <= dayOfWeek && eatery.getDayTo() >= dayOfWeek ? "c %s до %s" : "закрыто"), eatery.getOpenFrom(), eatery.getClosedTo());
     }
 }

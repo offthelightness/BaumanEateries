@@ -27,7 +27,6 @@ public class MenuListViewModel extends BaseViewModel {
         dishesRepository = ((BaumanEateriesApplication) application).getDishesRepository();
     }
 
-
     @Override
     public void init() {
         load();

@@ -34,7 +34,7 @@ public class MenuRecyclerViewAdapter extends RecyclerView.Adapter<MenuRecyclerVi
     @Override
     public MenuViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         MenuViewHolder menuViewHolder = new MenuViewHolder(LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_menu, parent, false));
+                .inflate(R.layout.item_dish, parent, false));
         menuViewHolder.itemView.setOnClickListener(v -> clickDishSubject.onNext(data.get(menuViewHolder.getAdapterPosition())));
         return menuViewHolder;
     }

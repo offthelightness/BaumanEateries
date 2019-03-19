@@ -8,7 +8,7 @@ public abstract class BaseFragment extends Fragment {
 
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
 
-    public void addDisposables(Disposable... disposables){
+    protected void addDisposables(Disposable... disposables){
         for (Disposable d: disposables) {
             compositeDisposable.add(d);
         }

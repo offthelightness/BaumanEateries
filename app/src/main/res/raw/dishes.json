@@ -1,84 +1,132 @@
 [
   {
+    "id": "9068995c-1964-4a40-88f8-54a3b68e87dc",
     "name": "Суп гороховый",
     "weight": 250,
     "cost": 100,
     "eateryType": "MAIN",
     "elements": [
       {
-        "PROTEIN": 2,
-        "TRIGLYCERIDE": 3,
-        "CARBOHYDRATE": 4
+        "element" : "PROTEIN",
+        "count" : 2
+      },
+      {
+        "element" : "TRIGLYCERIDE",
+        "count" : 3
+      },
+      {
+        "element" : "CARBOHYDRATE",
+        "count" : 4
       }
     ],
     "calorie": 150
   },
   {
+    "id": "acf8c797-8851-4b9f-a8bb-53de07f074f5",
     "name": "Макарошки",
     "weight": 200,
     "cost": 25,
     "eateryType": "MAIN",
     "elements": [
       {
-        "PROTEIN": 5,
-        "TRIGLYCERIDE": 6,
-        "CARBOHYDRATE": 7
+        "element" : "PROTEIN",
+        "count" : 5
+      },
+      {
+        "element" : "TRIGLYCERIDE",
+        "count" : 6
+      },
+      {
+        "element" : "CARBOHYDRATE",
+        "count" : 7
       }
     ],
     "calorie": 300
   },
   {
+    "id": "eed9fe68-22e1-46a6-8b13-499df830b82e",
     "name": "Пельмени студенческие",
     "weight": 500,
     "cost": 350,
     "eateryType": "PELMEN",
     "elements": [
       {
-        "PROTEIN": 8,
-        "TRIGLYCERIDE": 9,
-        "CARBOHYDRATE": 10
+        "element" : "PROTEIN",
+        "count" : 8
+      },
+      {
+        "element" : "TRIGLYCERIDE",
+        "count" : 9
+      },
+      {
+        "element" : "CARBOHYDRATE",
+        "count" : 10
       }
     ],
     "calorie": 345
   },
   {
+    "id": "7f3147a2-05ef-4d48-9679-9fefe53cf496",
     "name": "Пельмени профессорские",
     "weight": 400,
     "cost": 550,
     "eateryType": "PELMEN",
     "elements": [
       {
-        "PROTEIN": 11,
-        "TRIGLYCERIDE": 12,
-        "CARBOHYDRATE": 13
+        "element" : "PROTEIN",
+        "count" : 10
+      },
+      {
+        "element" : "TRIGLYCERIDE",
+        "count" : 11
+      },
+      {
+        "element" : "CARBOHYDRATE",
+        "count" : 12
       }
     ],
     "calorie": 355
   },
   {
+    "id": "10565cf0-5c93-4d01-9453-a6f458384817",
     "name": "Сосиска в тесте",
     "weight": 30,
     "cost": 49,
     "eateryType": "PIE",
     "elements": [
       {
-        "PROTEIN": 14,
-        "TRIGLYCERIDE":15,
-        "CARBOHYDRATE": 16
+        "element" : "PROTEIN",
+        "count" : 15
+      },
+      {
+        "element" : "TRIGLYCERIDE",
+        "count" : 16
+      },
+      {
+        "element" : "CARBOHYDRATE",
+        "count" : 17
       }
     ],
     "calorie": 99
   },
   {
+    "id": "54d561ba-3cb0-4b30-adac-ffb76d1f6b62",
     "name": "Булочка с маком",
     "weight": 20,
     "cost": 31,
     "eateryType": "PIE",
     "elements": [
       {
-        "PROTEIN": 17,
-        "TRIGLYCERIDE": 18,
-        "CARBOHYDRATE": 19
+        "element" : "PROTEIN",
+        "count" : 18
+      },
+      {
+        "element" : "TRIGLYCERIDE",
+        "count" : 19
+      },
+      {
+        "element" : "CARBOHYDRATE",
+        "count" : 20
       }
     ],
     "calorie": 58

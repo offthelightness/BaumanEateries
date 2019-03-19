@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import android.app.Application;
 
 import me.glagolev.baumaneateries.features.eateries.EateriesRepository;
+import me.glagolev.baumaneateries.features.menu.DishesRepository;
 import ru.terrakok.cicerone.Cicerone;
 import ru.terrakok.cicerone.NavigatorHolder;
 import ru.terrakok.cicerone.Router;
@@ -15,6 +16,7 @@ public class BaumanEateriesApplication extends Application {
     private Cicerone<Router> cicerone;
 
     private EateriesRepository eateriesRepository;
+    private DishesRepository dishesRepository;
 
     @Override
     public void onCreate() {
@@ -31,6 +33,7 @@ public class BaumanEateriesApplication extends Application {
 
     private void initRepositories() {
         eateriesRepository = new EateriesRepository(this, new Gson());
+        dishesRepository = new DishesRepository(this, new Gson());
     }
 
     public NavigatorHolder getNavigatorHolder() {
@@ -44,5 +47,9 @@ public class BaumanEateriesApplication extends Application {
 
     public EateriesRepository getEateriesRepository() {
         return eateriesRepository;
+    }
+
+    public DishesRepository getDishesRepository() {
+        return dishesRepository;
     }
 }

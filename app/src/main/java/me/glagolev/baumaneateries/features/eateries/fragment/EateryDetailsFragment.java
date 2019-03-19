@@ -26,6 +26,7 @@ public class EateryDetailsFragment extends BaseFragment {
 
     private TextView tvName, tvLocation, tvDescription;
     private TextView tvScheduleDay1, tvScheduleDay2, tvScheduleDay3, tvScheduleDay4, tvScheduleDay5, tvScheduleDay6, tvScheduleDay7;
+    @SuppressWarnings("FieldCanBeLocal")
     private ImageView ivClose;
 
     public static EateryDetailsFragment newInstance(EateryType type) {

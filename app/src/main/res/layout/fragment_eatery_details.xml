@@ -44,7 +44,7 @@
             android:layout_marginEnd="8dp"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="#eeeeee"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -57,12 +57,13 @@
             tools:text="Здесь можно покушать первые, вторые блюда, салаты, десерты"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             android:gravity="center"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="#eeeeee"
+            android:maxLines="2"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -70,21 +71,36 @@
             app:layout_constraintVertical_bias="0.34"/>
 
 
+    <View
+            android:id="@+id/v_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="36dp"
+            android:background="@android:color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.43"/>
+
+
     <TextView
             android:id="@+id/tv_schedule_day_1"
             tools:text="понедельник - c 9 до 17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:textColor="@android:color/darker_gray"
-            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="#eeeeee"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.45"/>
+            app:layout_constraintTop_toBottomOf="@+id/v_divider"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintBottom_toTopOf="@+id/tv_schedule_day_2"/>
 
     <TextView
             android:id="@+id/tv_schedule_day_2"
@@ -93,11 +109,10 @@
             android:layout_height="wrap_content"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:textColor="@android:color/darker_gray"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="#eeeeee"
             app:layout_constraintStart_toStartOf="@id/tv_schedule_day_1"
-            app:layout_constraintVertical_bias="0.51"/>
+            app:layout_constraintTop_toBottomOf="@+id/tv_schedule_day_1"
+            app:layout_constraintBottom_toTopOf="@+id/tv_schedule_day_3"/>
 
     <TextView
             android:id="@+id/tv_schedule_day_3"
@@ -106,11 +121,10 @@
             android:layout_height="wrap_content"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:textColor="@android:color/darker_gray"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="#eeeeee"
             app:layout_constraintStart_toStartOf="@id/tv_schedule_day_1"
-            app:layout_constraintVertical_bias="0.57"/>
+            app:layout_constraintTop_toBottomOf="@+id/tv_schedule_day_2"
+            app:layout_constraintBottom_toTopOf="@+id/tv_schedule_day_4"/>
 
     <TextView
             android:id="@+id/tv_schedule_day_4"
@@ -119,11 +133,10 @@
             android:layout_height="wrap_content"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:textColor="@android:color/darker_gray"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="#eeeeee"
             app:layout_constraintStart_toStartOf="@id/tv_schedule_day_1"
-            app:layout_constraintVertical_bias="0.63"/>
+            app:layout_constraintTop_toBottomOf="@+id/tv_schedule_day_3"
+            app:layout_constraintBottom_toTopOf="@+id/tv_schedule_day_5"/>
 
     <TextView
             android:id="@+id/tv_schedule_day_5"
@@ -132,11 +145,10 @@
             android:layout_height="wrap_content"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:textColor="@android:color/darker_gray"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="#eeeeee"
             app:layout_constraintStart_toStartOf="@id/tv_schedule_day_1"
-            app:layout_constraintVertical_bias="0.69"/>
+            app:layout_constraintTop_toBottomOf="@+id/tv_schedule_day_4"
+            app:layout_constraintBottom_toTopOf="@+id/tv_schedule_day_6"/>
 
     <TextView
             android:id="@+id/tv_schedule_day_6"
@@ -145,24 +157,24 @@
             android:layout_height="wrap_content"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:textColor="@android:color/darker_gray"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="#eeeeee"
             app:layout_constraintStart_toStartOf="@id/tv_schedule_day_1"
-            app:layout_constraintVertical_bias="0.75"/>
+            app:layout_constraintTop_toBottomOf="@+id/tv_schedule_day_5"
+            app:layout_constraintBottom_toTopOf="@+id/tv_schedule_day_7"/>
 
     <TextView
             android:id="@+id/tv_schedule_day_7"
             tools:text="воскресенье - c 9 до 17"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
             android:textSize="14sp"
             android:textStyle="bold"
-            android:textColor="@android:color/darker_gray"
-            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="#eeeeee"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@id/tv_schedule_day_1"
-            app:layout_constraintVertical_bias="0.81"/>
+            app:layout_constraintTop_toBottomOf="@+id/tv_schedule_day_6"
+            />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

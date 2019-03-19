@@ -37,4 +37,12 @@ public class EateryDetailsViewModel extends BaseViewModel {
     public void close() {
         router.exit();
     }
+
+    public String getScheduleFormattedString(int dayOfWeek, Eatery eatery) {
+        switch (dayOfWeek) {
+
+            default:
+                return null;
+        }
+    }
 }

@@ -18,7 +18,6 @@ import me.glagolev.baumaneateries.features.menu.model.Element;
 
 public class MenuRecyclerViewAdapter extends RecyclerView.Adapter<MenuRecyclerViewAdapter.MenuViewHolder> {
 
-    private BehaviorSubject<Dish> clickDishSubject = BehaviorSubject.create();
     private List<Dish> data = new ArrayList<>();
 
     public void setData(List<Dish> data) {
@@ -27,6 +26,8 @@ public class MenuRecyclerViewAdapter extends RecyclerView.Adapter<MenuRecyclerVi
             System.out.println(d);
         }
     }
+
+    private BehaviorSubject<Dish> clickDishSubject = BehaviorSubject.create();
 
     public Observable<Dish> getClickDishObservable() {
         return clickDishSubject.hide();
@@ -37,12 +38,17 @@ public class MenuRecyclerViewAdapter extends RecyclerView.Adapter<MenuRecyclerVi
     public MenuViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         MenuViewHolder menuViewHolder = new MenuViewHolder(LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_dish, parent, false));
-        menuViewHolder.itemView.setOnClickListener(v -> clickDishSubject.onNext(data.get(menuViewHolder.getAdapterPosition())));
         return menuViewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull MenuViewHolder holder, int position) {
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clickDishSubject.onNext(new Dish());
+            }
+        });
         holder.tvName.setText(data.get(position).getName());
         holder.tvPrice.setText(String.format("%s \u20BD", data.get(position).getPrice()));
         holder.tvWeight.setText(String.format("%s г", data.get(position).getWeight()));

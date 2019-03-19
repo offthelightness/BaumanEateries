@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -26,7 +28,12 @@ public class MenuListFragment extends BaseFragment {
     private RecyclerView recyclerView;
     private MenuRecyclerViewAdapter adapter;
     private MenuListViewModel viewModel;
+    private EateryType eateryType;
+    private TextView tvOrderCounter;
 
+
+    //TODO
+    private int count = 0;
 
     public static MenuListFragment newInstance(EateryType type) {
         MenuListFragment fragment = new MenuListFragment();
@@ -42,12 +49,14 @@ public class MenuListFragment extends BaseFragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         viewModel = ViewModelProviders.of(this).get(MenuListViewModel.class);
+        eateryType = (EateryType) getArguments().getSerializable(Screens.KEY_EATERY_TYPE);
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_menu_list, container, false);
+
     }
 
     @Override
@@ -55,12 +64,15 @@ public class MenuListFragment extends BaseFragment {
         super.onViewCreated(view, savedInstanceState);
 
         recyclerView = view.findViewById(R.id.rv_menu);
+        tvOrderCounter = view.findViewById(R.id.tv_order_counter);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
         adapter = new MenuRecyclerViewAdapter();
         recyclerView.setAdapter(adapter);
 
         viewModel.init();
+        viewModel.loadDishes();
     }
 
     @Override
@@ -76,7 +88,20 @@ public class MenuListFragment extends BaseFragment {
                                 adapter.setData(dishes);
                                 adapter.notifyDataSetChanged();
                             }
-                        })
+                        }),
+                adapter
+                        .getClickDishObservable()
+                        .subscribeWith(
+                                new SimpleDisposable<Dish>() {
+                                    @Override
+                                    public void onNext(Dish dish) {
+                                        super.onNext(dish);
+                                        count++;
+                                        System.out.println(Thread.currentThread().toString());
+                                        tvOrderCounter.setText(String.valueOf(count));
+                                    }
+                                }
+                        )
         );
     }
 }

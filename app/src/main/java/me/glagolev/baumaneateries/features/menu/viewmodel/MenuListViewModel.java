@@ -9,6 +9,7 @@ import io.reactivex.Observable;
 import io.reactivex.subjects.BehaviorSubject;
 import me.glagolev.baumaneateries.core.BaumanEateriesApplication;
 import me.glagolev.baumaneateries.core.viewmodel.BaseViewModel;
+import me.glagolev.baumaneateries.features.eateries.model.EateryType;
 import me.glagolev.baumaneateries.features.menu.DishesRepository;
 import me.glagolev.baumaneateries.features.menu.model.Dish;
 
@@ -29,10 +30,13 @@ public class MenuListViewModel extends BaseViewModel {
 
     @Override
     public void init() {
-        load();
     }
 
-    private void load() {
+    public void loadDishes() {
         menuSubjects.onNext(dishesRepository.getDishes());
+    }
+
+    public void loadDishes(EateryType eateryType) {
+        menuSubjects.onNext(dishesRepository.getDishes(eateryType));
     }
 }

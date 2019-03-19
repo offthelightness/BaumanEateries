@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Суп гороховый",
+    "weight": 250,
+    "cost": 100,
+    "eateryType": "MAIN",
+    "elements": [
+      {
+        "PROTEIN": 2,
+        "TRIGLYCERIDE": 3,
+        "CARBOHYDRATE": 4
+      }
+    ],
+    "calorie": 150
+  },
+  {
+    "name": "Макарошки",
+    "weight": 200,
+    "cost": 25,
+    "eateryType": "MAIN",
+    "elements": [
+      {
+        "PROTEIN": 5,
+        "TRIGLYCERIDE": 6,
+        "CARBOHYDRATE": 7
+      }
+    ],
+    "calorie": 300
+  },
+  {
+    "name": "Пельмени студенческие",
+    "weight": 500,
+    "cost": 350,
+    "eateryType": "PELMEN",
+    "elements": [
+      {
+        "PROTEIN": 8,
+        "TRIGLYCERIDE": 9,
+        "CARBOHYDRATE": 10
+      }
+    ],
+    "calorie": 345
+  },
+  {
+    "name": "Пельмени профессорские",
+    "weight": 400,
+    "cost": 550,
+    "eateryType": "PELMEN",
+    "elements": [
+      {
+        "PROTEIN": 11,
+        "TRIGLYCERIDE": 12,
+        "CARBOHYDRATE": 13
+      }
+    ],
+    "calorie": 355
+  },
+  {
+    "name": "Сосиска в тесте",
+    "weight": 30,
+    "cost": 49,
+    "eateryType": "PIE",
+    "elements": [
+      {
+        "PROTEIN": 14,
+        "TRIGLYCERIDE":15,
+        "CARBOHYDRATE": 16
+      }
+    ],
+    "calorie": 99
+  },
+  {
+    "name": "Булочка с маком",
+    "weight": 20,
+    "cost": 31,
+    "eateryType": "PIE",
+    "elements": [
+      {
+        "PROTEIN": 17,
+        "TRIGLYCERIDE": 18,
+        "CARBOHYDRATE": 19
+      }
+    ],
+    "calorie": 58
+  }
+]

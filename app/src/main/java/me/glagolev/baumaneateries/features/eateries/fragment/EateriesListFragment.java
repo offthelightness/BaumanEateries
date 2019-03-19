@@ -13,7 +13,7 @@ import me.glagolev.baumaneateries.core.BaseFragment;
 import me.glagolev.baumaneateries.features.eateries.model.EateryType;
 import me.glagolev.baumaneateries.features.eateries.viewmodel.EateriesListViewModel;
 
-public class EateriesListFragment extends BaseFragment implements View.OnClickListener {
+public class EateriesListFragment extends BaseFragment {
 
     private EateriesListViewModel viewModel;
 
@@ -26,7 +26,12 @@ public class EateriesListFragment extends BaseFragment implements View.OnClickLi
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_eateries_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_eateries_list, container, false);
+        view.findViewById(R.id.iv_eatery_main).setOnClickListener(v -> viewModel.openEatery(EateryType.MAIN));
+        view.findViewById(R.id.iv_eatery_pelmen).setOnClickListener(v -> viewModel.openEatery(EateryType.PELMEN));
+        view.findViewById(R.id.iv_eatery_pie).setOnClickListener(v -> viewModel.openEatery(EateryType.PIE));
+
+        return view;
     }
 
     @Override
@@ -34,19 +39,4 @@ public class EateriesListFragment extends BaseFragment implements View.OnClickLi
         super.onViewCreated(view, savedInstanceState);
         viewModel.init();
     }
-
-    @Override
-    public void onClick(View v) {
-        if (v.getId() == R.id.iv_eatery_main) {
-            viewModel.openEatery(EateryType.MAIN);
-        } else if (v.getId() == R.id.iv_eatery_pelmen) {
-            viewModel.openEatery(EateryType.PELMEN);
-        } else if (v.getId() == R.id.iv_eatery_pie) {
-            viewModel.openEatery(EateryType.PIE);
-        } else {
-            throw new IllegalArgumentException("Unknown eatery");
-        }
-    }
-
-
 }

@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import io.reactivex.Observable;
 import io.reactivex.subjects.BehaviorSubject;
 import me.glagolev.baumaneateries.core.BaseViewModel;
+import me.glagolev.baumaneateries.core.BaumanEateriesApplication;
 import me.glagolev.baumaneateries.features._common.Screens;
 import me.glagolev.baumaneateries.features.eateries.EateriesRepository;
 import me.glagolev.baumaneateries.features.eateries.model.Eatery;
@@ -21,7 +22,7 @@ public class EateriesListViewModel extends BaseViewModel {
 
     public EateriesListViewModel(@NonNull Application application) {
         super(application);
-        eateriesRepository = EateriesRepository.getInstance(application);
+        eateriesRepository = ((BaumanEateriesApplication)application).getEateriesRepository();
     }
 
 
@@ -32,13 +33,11 @@ public class EateriesListViewModel extends BaseViewModel {
 
     private void load() {
         List<Eatery> objects = eateriesRepository.getEateries();
-
-        System.out.println();
         eateriesSubjects.onNext(objects);
     }
 
     public void openEatery(EateryType type) {
-        router.navigateTo(new Screens.EateryDetailScreen());
+        router.navigateTo(new Screens.MenuScreen(type));
     }
 
     public Observable<List<Eatery>> getEateriesObservable() {

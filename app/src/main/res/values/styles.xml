@@ -11,6 +11,7 @@
         <item name="android:colorPrimaryDark">@color/primary_dark</item>
         <item name="android:colorAccent">@color/accent</item>
         <item name="android:windowBackground">@color/window_background</item>
+        <item name="android:fontFamily">@font/google_sans</item>
     </style>
 
 </resources>

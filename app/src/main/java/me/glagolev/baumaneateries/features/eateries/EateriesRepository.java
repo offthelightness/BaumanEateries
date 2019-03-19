@@ -11,9 +11,8 @@ import me.glagolev.baumaneateries.R;
 import me.glagolev.baumaneateries.core.BaseRepository;
 import me.glagolev.baumaneateries.features.eateries.model.Eatery;
 
-public class EateriesRepository  extends BaseRepository {
+public class EateriesRepository extends BaseRepository {
 
-    private static EateriesRepository INSTANCE;
     private Context context;
     private Gson gson;
 
@@ -21,23 +20,12 @@ public class EateriesRepository  extends BaseRepository {
 
     }
 
-    private EateriesRepository(final Context context, final Gson gson) {
+    public EateriesRepository(final Context context, final Gson gson) {
         this.context = context;
         this.gson = gson;
     }
 
-    public static EateriesRepository getInstance(final Context context) {
-        if (INSTANCE == null) {
-            synchronized (EateriesRepository.class) {
-                if (INSTANCE == null) {
-                    INSTANCE = new EateriesRepository(context, new Gson());
-                }
-            }
-        }
-        return INSTANCE;
-    }
-
     public List<Eatery> getEateries() {
-        return  gson.fromJson(readJsonFile(context.getResources().openRawResource(R.raw.eateries)), new TypeToken<List<Eatery>>(){}.getType());
+        return gson.fromJson(readJsonFile(context.getResources().openRawResource(R.raw.eateries)), new TypeToken<List<Eatery>>() {}.getType());
     }
 }

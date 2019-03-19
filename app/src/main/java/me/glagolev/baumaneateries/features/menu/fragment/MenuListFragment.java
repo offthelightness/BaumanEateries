@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.List;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProviders;
@@ -12,6 +14,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import me.glagolev.baumaneateries.R;
 import me.glagolev.baumaneateries.core.BaseFragment;
+import me.glagolev.baumaneateries.core.SimpleDisposable;
+import me.glagolev.baumaneateries.features._common.Screens;
+import me.glagolev.baumaneateries.features.eateries.model.EateryType;
 import me.glagolev.baumaneateries.features.menu.MenuRecyclerViewAdapter;
 import me.glagolev.baumaneateries.features.menu.viewmodel.MenuListViewModel;
 
@@ -20,6 +25,17 @@ public class MenuListFragment extends BaseFragment {
     private RecyclerView recyclerView;
     private MenuRecyclerViewAdapter adapter;
     private MenuListViewModel viewModel;
+
+
+    public static MenuListFragment newInstance(EateryType type) {
+        MenuListFragment fragment = new MenuListFragment();
+
+        Bundle args = new Bundle();
+        args.putSerializable(Screens.MenuScreen.KEY_EATERY_TYPE, type);
+        fragment.setArguments(args);
+
+        return fragment;
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,5 +60,22 @@ public class MenuListFragment extends BaseFragment {
         recyclerView.setAdapter(adapter);
 
         viewModel.init();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        addDisposables(
+                viewModel
+                        .getMenuObservable()
+                        .subscribeWith(new SimpleDisposable<List<Object>>() {
+                            @Override
+                            public void onNext(List<Object> objects) {
+                                super.onNext(objects);
+                                adapter.setData(objects);
+                                adapter.notifyDataSetChanged();
+                            }
+                        })
+        );
     }
 }

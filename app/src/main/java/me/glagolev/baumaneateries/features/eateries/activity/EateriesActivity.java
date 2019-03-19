@@ -3,7 +3,7 @@ package me.glagolev.baumaneateries.features.eateries.activity;
 import android.os.Bundle;
 
 import me.glagolev.baumaneateries.R;
-import me.glagolev.baumaneateries.core.BaseActivity;
+import me.glagolev.baumaneateries.core.ui.BaseActivity;
 import me.glagolev.baumaneateries.features._common.Screens;
 
 public class EateriesActivity extends BaseActivity {

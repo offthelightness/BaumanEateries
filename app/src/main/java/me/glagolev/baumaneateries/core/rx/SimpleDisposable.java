@@ -1,4 +1,4 @@
-package me.glagolev.baumaneateries.core;
+package me.glagolev.baumaneateries.core.rx;
 
 import io.reactivex.observers.DisposableObserver;
 

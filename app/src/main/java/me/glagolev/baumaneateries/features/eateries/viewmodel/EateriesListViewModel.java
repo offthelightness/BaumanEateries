@@ -7,7 +7,7 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import io.reactivex.Observable;
 import io.reactivex.subjects.BehaviorSubject;
-import me.glagolev.baumaneateries.core.BaseViewModel;
+import me.glagolev.baumaneateries.core.viewmodel.BaseViewModel;
 import me.glagolev.baumaneateries.core.BaumanEateriesApplication;
 import me.glagolev.baumaneateries.features._common.Screens;
 import me.glagolev.baumaneateries.features.eateries.EateriesRepository;
@@ -24,7 +24,6 @@ public class EateriesListViewModel extends BaseViewModel {
         super(application);
         eateriesRepository = ((BaumanEateriesApplication)application).getEateriesRepository();
     }
-
 
     @Override
     public void init() {

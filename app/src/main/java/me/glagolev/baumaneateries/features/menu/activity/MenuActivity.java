@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import me.glagolev.baumaneateries.R;
-import me.glagolev.baumaneateries.core.BaseActivity;
+import me.glagolev.baumaneateries.core.ui.BaseActivity;
 import me.glagolev.baumaneateries.features._common.Screens;
 import me.glagolev.baumaneateries.features.eateries.model.EateryType;
 

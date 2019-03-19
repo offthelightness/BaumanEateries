@@ -8,7 +8,7 @@ import android.content.Context;
 import java.util.List;
 
 import me.glagolev.baumaneateries.R;
-import me.glagolev.baumaneateries.core.BaseRepository;
+import me.glagolev.baumaneateries.core.repo.BaseRepository;
 import me.glagolev.baumaneateries.features.eateries.model.Eatery;
 
 public class EateriesRepository extends BaseRepository {

@@ -3,39 +3,43 @@ package me.glagolev.baumaneateries.features.eateries.model;
 public class Eatery {
 
     private String id;
+    private EateryType type;
     private String name;
-    private String description;
-    private String image;
+    private String location;
+    private Integer openFrom;
+    private Integer closedTo;
+    private Integer dayFrom;
+    private Integer dayTo;
 
     public String getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public EateryType getType() {
+        return type;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getLocation() {
+        return location;
     }
 
-    public String getDescription() {
-        return description;
+    public Integer getOpenFrom() {
+        return openFrom;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public Integer getClosedTo() {
+        return closedTo;
     }
 
-    public String getImage() {
-        return image;
+    public Integer getDayFrom() {
+        return dayFrom;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public Integer getDayTo() {
+        return dayTo;
     }
 }

@@ -25,7 +25,7 @@
             android:textStyle="bold"
             android:textAlignment="textEnd"
             android:textColor="@android:color/white"
-            app:layout_constraintEnd_toEndOf="@id/tv_subtitle_eatery_main"
+            app:layout_constraintStart_toStartOf="@id/tv_subtitle_eatery_main"
             app:layout_constraintBottom_toTopOf="@id/tv_subtitle_eatery_main"/>
 
     <TextView
@@ -33,11 +33,11 @@
             android:text="Попробуй успеть до следующей пары"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp"
             android:textAlignment="textEnd"
             android:textColor="@android:color/white"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="@+id/iv_eatery_main"/>
 
     <ImageView
@@ -61,7 +61,7 @@
             android:textStyle="bold"
             android:textAlignment="textEnd"
             android:textColor="@android:color/white"
-            app:layout_constraintEnd_toEndOf="@id/tv_subtitle_eatery_pelmen"
+            app:layout_constraintStart_toStartOf="@id/tv_subtitle_eatery_pelmen"
             app:layout_constraintBottom_toTopOf="@id/tv_subtitle_eatery_pelmen"/>
 
     <TextView
@@ -69,11 +69,11 @@
             android:text="Бульона, как воды в твоем курсаче"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp"
             android:textAlignment="textEnd"
             android:textColor="@android:color/white"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="@+id/iv_eatery_pelmen"/>
 
     <ImageView
@@ -96,7 +96,7 @@
             android:textStyle="bold"
             android:textAlignment="textEnd"
             android:textColor="@android:color/white"
-            app:layout_constraintEnd_toEndOf="@id/tv_subtitle_eatery_pie"
+            app:layout_constraintStart_toStartOf="@id/tv_subtitle_eatery_pie"
             app:layout_constraintBottom_toTopOf="@id/tv_subtitle_eatery_pie"/>
 
     <TextView
@@ -104,11 +104,19 @@
             android:text="Булочка с сыром, этим все сказано..."
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
             android:layout_marginBottom="8dp"
-            android:textAlignment="textEnd"
+            android:textAlignment="textStart"
             android:textColor="@android:color/white"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="@+id/iv_eatery_pie"/>
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/ic_menu_info_details"
+            tools:layout_editor_absoluteY="16dp"
+            tools:layout_editor_absoluteX="363dp"
+            android:id="@+id/imageView"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

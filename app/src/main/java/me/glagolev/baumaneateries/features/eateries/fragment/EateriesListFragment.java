@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProviders;
 import me.glagolev.baumaneateries.R;
-import me.glagolev.baumaneateries.core.BaseFragment;
+import me.glagolev.baumaneateries.core.ui.BaseFragment;
 import me.glagolev.baumaneateries.features.eateries.model.EateryType;
 import me.glagolev.baumaneateries.features.eateries.viewmodel.EateriesListViewModel;
 

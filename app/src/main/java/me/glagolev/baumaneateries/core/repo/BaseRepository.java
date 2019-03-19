@@ -1,4 +1,4 @@
-package me.glagolev.baumaneateries.core;
+package me.glagolev.baumaneateries.core.repo;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

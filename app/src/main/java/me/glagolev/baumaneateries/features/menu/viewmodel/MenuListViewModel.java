@@ -8,7 +8,7 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import io.reactivex.Observable;
 import io.reactivex.subjects.BehaviorSubject;
-import me.glagolev.baumaneateries.core.BaseViewModel;
+import me.glagolev.baumaneateries.core.viewmodel.BaseViewModel;
 
 public class MenuListViewModel extends BaseViewModel {
 

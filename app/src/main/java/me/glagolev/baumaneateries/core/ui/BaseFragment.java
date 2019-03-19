@@ -1,4 +1,4 @@
-package me.glagolev.baumaneateries.core;
+package me.glagolev.baumaneateries.core.ui;
 
 import androidx.fragment.app.Fragment;
 import io.reactivex.disposables.CompositeDisposable;

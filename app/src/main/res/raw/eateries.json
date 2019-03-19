@@ -1,17 +1,32 @@
 [
   {
     "id": "1f61fde6-7ca9-4afd-a505-cad007d30edc",
-    "name": "Столовая над главной",
-    "description": "Вкусная, \"Тайная\", твоя"
+    "type": "MAIN",
+    "name": "Главная столовая",
+    "location": "Обжорный ряд ГУК 2 этаж",
+    "openFrom": 9,
+    "closedTo": 17,
+    "dayFrom": 1,
+    "dayTo": 5
   },
   {
     "id": "01a17753-f134-4f28-9aa3-a8d10d1a403d",
-    "name": "Столовя ЮГ",
-    "description": "Мимо декана за котлеткой"
+    "type": "PELMEN",
+    "name": "Пельменная",
+    "location": "Обжорный ряд ГУК 2 этаж",
+    "openFrom": 9,
+    "closedTo": 19,
+    "dayFrom": 1,
+    "dayTo": 5
   },
   {
     "id": "228ce122-fb8e-494c-b535-2fdbfbb76a91",
-    "name": "Профессорско-преподавательская",
-    "description": "Мальчик вырос"
+    "type": "PIE",
+    "name": "Пирожковая",
+    "location": "Обжорный ряд ГУК 2 этаж",
+    "openFrom": 9,
+    "closedTo": 15,
+    "dayFrom": 1,
+    "dayTo": 5
   }
 ]

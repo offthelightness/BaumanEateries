@@ -3,6 +3,7 @@ package me.glagolev.baumaneateries.features._common;
 import androidx.fragment.app.Fragment;
 import me.glagolev.baumaneateries.features.eateries.fragment.EateriesListFragment;
 import me.glagolev.baumaneateries.features.eateries.fragment.EateryDetailFragment;
+import me.glagolev.baumaneateries.features.menu.fragment.MenuListFragment;
 import ru.terrakok.cicerone.android.support.SupportAppScreen;
 
 public class Screens {
@@ -19,6 +20,13 @@ public class Screens {
         @Override
         public Fragment getFragment() {
             return new EateryDetailFragment();
+        }
+    }
+
+    public static final class MenuListScreen extends SupportAppScreen {
+        @Override
+        public Fragment getFragment() {
+            return new MenuListFragment();
         }
     }
 }

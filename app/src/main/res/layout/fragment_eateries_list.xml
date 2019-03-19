@@ -6,14 +6,109 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_eateries"
+    <ImageView
+            android:id="@+id/iv_eatery_main"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:listitem="@layout/item_eatery"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:background="?android:attr/selectableItemBackground"
+            app:srcCompat="@drawable/eatery_main"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/iv_eatery_pelmen"/>
+
+    <TextView
+            android:text="Главная столовая"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAlignment="textEnd"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="@id/tv_subtitle_eatery_main"
+            app:layout_constraintBottom_toTopOf="@id/tv_subtitle_eatery_main"/>
+
+    <TextView
+            android:id="@+id/tv_subtitle_eatery_main"
+            android:text="Попробуй успеть до следующей пары"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:textAlignment="textEnd"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_eatery_main"/>
+
+    <ImageView
+            android:id="@+id/iv_eatery_pelmen"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:background="?android:attr/selectableItemBackground"
+            app:srcCompat="@drawable/eatery_pelmen"
+            app:layout_constraintTop_toBottomOf="@+id/iv_eatery_main"
+            app:layout_constraintBottom_toTopOf="@id/iv_eatery_pie"
+            app:layout_constraintVertical_chainStyle="spread_inside"
+            tools:layout_editor_absoluteX="8dp"/>
+
+    <TextView
+            android:text="Пельменная"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAlignment="textEnd"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="@id/tv_subtitle_eatery_pelmen"
+            app:layout_constraintBottom_toTopOf="@id/tv_subtitle_eatery_pelmen"/>
+
+    <TextView
+            android:id="@+id/tv_subtitle_eatery_pelmen"
+            android:text="Бульона, как воды в твоем курсаче"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:textAlignment="textEnd"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_eatery_pelmen"/>
+
+    <ImageView
+            android:id="@+id/iv_eatery_pie"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:background="?android:attr/selectableItemBackground"
+            app:srcCompat="@drawable/eatery_pie"
+            app:layout_constraintTop_toBottomOf="@+id/iv_eatery_pelmen"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            tools:layout_editor_absoluteX="8dp"/>
+
+    <TextView
+            android:text="Пирожковая"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAlignment="textEnd"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="@id/tv_subtitle_eatery_pie"
+            app:layout_constraintBottom_toTopOf="@id/tv_subtitle_eatery_pie"/>
+
+    <TextView
+            android:id="@+id/tv_subtitle_eatery_pie"
+            android:text="Булочка с сыром, этим все сказано..."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:textAlignment="textEnd"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_eatery_pie"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

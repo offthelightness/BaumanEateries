@@ -6,6 +6,7 @@ public class Eatery {
     private EateryType type;
     private String name;
     private String location;
+    private String description;
     private Integer openFrom;
     private Integer closedTo;
     private Integer dayFrom;
@@ -25,6 +26,10 @@ public class Eatery {
 
     public String getLocation() {
         return location;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     public Integer getOpenFrom() {

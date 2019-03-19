@@ -27,6 +27,7 @@ public class EateriesListFragment extends BaseFragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_eateries_list, container, false);
+
         view.findViewById(R.id.iv_eatery_main).setOnClickListener(v -> viewModel.openEatery(EateryType.MAIN));
         view.findViewById(R.id.iv_eatery_pelmen).setOnClickListener(v -> viewModel.openEatery(EateryType.PELMEN));
         view.findViewById(R.id.iv_eatery_pie).setOnClickListener(v -> viewModel.openEatery(EateryType.PIE));

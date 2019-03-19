@@ -21,12 +21,7 @@ public class EateriesListViewModel extends BaseViewModel {
         router.navigateTo(new Screens.MenuScreen(type));
     }
 
-    public void openEateryteDetails(EateryType type) {
+    public void openEateryDetails(EateryType type) {
         router.navigateTo(new Screens.EateryDetailsScreen(type));
-    }
-
-    @Override
-    protected void onCleared() {
-        super.onCleared();
     }
 }

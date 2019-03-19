@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -25,6 +26,7 @@ public class EateryDetailsFragment extends BaseFragment {
 
     private TextView tvName, tvLocation, tvDescription;
     private TextView tvScheduleDay1, tvScheduleDay2, tvScheduleDay3, tvScheduleDay4, tvScheduleDay5, tvScheduleDay6, tvScheduleDay7;
+    private ImageView ivClose;
 
     public static EateryDetailsFragment newInstance(EateryType type) {
         EateryDetailsFragment fragment = new EateryDetailsFragment();
@@ -52,6 +54,17 @@ public class EateryDetailsFragment extends BaseFragment {
         tvName = view.findViewById(R.id.tv_name);
         tvLocation = view.findViewById(R.id.tv_location);
         tvDescription = view.findViewById(R.id.tv_description);
+
+        tvScheduleDay1 = view.findViewById(R.id.tv_schedule_day_1);
+        tvScheduleDay2 = view.findViewById(R.id.tv_schedule_day_2);
+        tvScheduleDay3 = view.findViewById(R.id.tv_schedule_day_3);
+        tvScheduleDay4 = view.findViewById(R.id.tv_schedule_day_4);
+        tvScheduleDay5 = view.findViewById(R.id.tv_schedule_day_5);
+        tvScheduleDay6 = view.findViewById(R.id.tv_schedule_day_6);
+        tvScheduleDay7 = view.findViewById(R.id.tv_schedule_day_7);
+
+        ivClose = view.findViewById(R.id.iv_close);
+        ivClose.setOnClickListener(v -> viewModel.close());
 
         return view;
     }
@@ -84,6 +97,8 @@ public class EateryDetailsFragment extends BaseFragment {
     private void initUI() {
         tvName.setText(eatery.getName());
         tvLocation.setText(eatery.getLocation());
-        //tvDescription.setText(eatery.get());
+        tvDescription.setText(eatery.getDescription());
+
+        tvScheduleDay1.setText(String.format("понедельник c %s до %s", eatery.getOpenFrom(), eatery.getClosedTo()));
     }
 }

@@ -2,8 +2,6 @@ package me.glagolev.baumaneateries.features.eateries.viewmodel;
 
 import android.app.Application;
 
-import java.util.List;
-
 import androidx.annotation.NonNull;
 import io.reactivex.Observable;
 import io.reactivex.subjects.BehaviorSubject;
@@ -36,4 +34,7 @@ public class EateryDetailsViewModel extends BaseViewModel {
         eaterySubjects.onNext(eateriesRepository.getEatery(eateryType));
     }
 
+    public void close() {
+        router.exit();
+    }
 }

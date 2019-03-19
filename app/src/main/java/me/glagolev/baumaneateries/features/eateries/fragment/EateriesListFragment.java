@@ -32,9 +32,9 @@ public class EateriesListFragment extends BaseFragment {
         view.findViewById(R.id.iv_eatery_pelmen).setOnClickListener(v -> viewModel.openEatery(EateryType.PELMEN));
         view.findViewById(R.id.iv_eatery_pie).setOnClickListener(v -> viewModel.openEatery(EateryType.PIE));
 
-        view.findViewById(R.id.iv_eatery_main_info).setOnClickListener(v -> viewModel.openEateryteDetails(EateryType.MAIN));
-        view.findViewById(R.id.iv_eatery_pelmen_info).setOnClickListener(v -> viewModel.openEateryteDetails(EateryType.PELMEN));
-        view.findViewById(R.id.iv_eatery_pie_info).setOnClickListener(v -> viewModel.openEateryteDetails(EateryType.PIE));
+        view.findViewById(R.id.iv_eatery_main_info).setOnClickListener(v -> viewModel.openEateryDetails(EateryType.MAIN));
+        view.findViewById(R.id.iv_eatery_pelmen_info).setOnClickListener(v -> viewModel.openEateryDetails(EateryType.PELMEN));
+        view.findViewById(R.id.iv_eatery_pie_info).setOnClickListener(v -> viewModel.openEateryDetails(EateryType.PIE));
 
         return view;
     }

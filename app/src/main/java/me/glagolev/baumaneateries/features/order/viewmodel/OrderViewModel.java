@@ -11,6 +11,7 @@ import io.reactivex.subjects.BehaviorSubject;
 import me.glagolev.baumaneateries.core.BaumanEateriesApplication;
 import me.glagolev.baumaneateries.core.viewmodel.BaseViewModel;
 import me.glagolev.baumaneateries.features.menu.model.Dish;
+import me.glagolev.baumaneateries.features.menu.model.Element;
 import me.glagolev.baumaneateries.features.order.OrderRepository;
 
 public class OrderViewModel extends BaseViewModel {
@@ -45,7 +46,15 @@ public class OrderViewModel extends BaseViewModel {
         for (Dish d : map.keySet()) {
             totalPrice += d.getPrice() * map.get(d);
         }
-        return String.format("Общая стоимость: %d \u20BD", totalPrice);
+        return String.format("Итоговая цена: %d \u20BD", totalPrice);
+    }
+
+    public String getTotalCountString(Map<Dish, Integer> map) {
+        int sum = 0;
+        for (Integer i : map.values()) {
+            sum += i;
+        }
+        return String.format("Всего: %d шт.", sum);
     }
 
     public String getTotalCalorieString(Map<Dish, Integer> map) {
@@ -56,11 +65,18 @@ public class OrderViewModel extends BaseViewModel {
         return String.format("Общая калорийность: %d кКал", totalCalorie);
     }
 
-    public String getTotalCountString(Map<Dish, Integer> map) {
-        int sum = 0;
-        for (Integer i : map.values()) {
-            sum += i;
+    public String getTotalPFCString(Map<Dish, Integer> map) {
+        double proteins = 0, fats = 0, carbohydrates = 0;
+
+        for (Dish d : map.keySet()) {
+            proteins += d.getElementCount(Element.PROTEIN) * d.getWeight() / 100.0 * map.get(d);
+            fats += d.getElementCount(Element.FAT) * d.getWeight() / 100.0 * map.get(d);
+            carbohydrates += d.getElementCount(Element.CARBOHYDRATE) * d.getWeight() / 100.0 * map.get(d);
         }
-        return String.format("Всего: %d шт.", sum);
+        return String.format(
+                "Пищевая ценность: Б-%sг, Ж-%sг, У-%sг",
+                (int) proteins,
+                (int) fats,
+                (int) carbohydrates);
     }
 }

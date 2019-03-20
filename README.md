@@ -1,9 +1,11 @@
 # BaumanEateries
 Contest app for Bauman Best HACK'2019
 
+![alt text](https://github.com/offthelightness/BaumanEateries/blob/master/sample/main_screen.png)
+
 Приложение Best HACK'2019(BaumanEateries) написано на языке Javа, как отборочное задание к хакатону Best HACK'2019.
 Работает на устройствах с Android 5.0 и выше. Исходный код может быть открыт и скомплирован в актуальной на данный момент
-версии Android Studio 3.3. Apk-файл и видео работы приложения лежат в каталоге ./sample
+версии Android Studio 3.3. apk-файл и видео работы приложения лежат в каталоге ./sample
 
 Архитектура приложения представляет собой слабосвязанные paсkage'ы с фичами, и отдельным package'м core, содержащим
 родительские классы Activity, Fragment, ViewModel, Repository для сокрытия переисполльзуемого кода. Также в пакете core находится App класс. 
@@ -16,4 +18,4 @@ Contest app for Bauman Best HACK'2019
 Для предоставления  и хранения самих данных (например, заказа) ViewModel использует DataRepository.
 
 Струтура проекта представлена ниже:
-![alt text](https://raw.githubusercontent.com/offthelightness/BaumanEateries/master/app/src/main/res/raw/structure.png?token=AUJnuoh9S3ECogQRZ1vBud22iyBXOnZqks5cm9sTwA%3D%3D)
+![alt text](https://raw.githubusercontent.com/offthelightness/BaumanEateries/master/app/src/main/res/raw/structure.png)

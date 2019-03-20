@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -15,8 +14,8 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import me.glagolev.baumaneateries.R;
-import me.glagolev.baumaneateries.core.ui.BaseFragment;
 import me.glagolev.baumaneateries.core.rx.SimpleDisposable;
+import me.glagolev.baumaneateries.core.ui.BaseFragment;
 import me.glagolev.baumaneateries.features._common.Screens;
 import me.glagolev.baumaneateries.features.eateries.model.EateryType;
 import me.glagolev.baumaneateries.features.menu.MenuRecyclerViewAdapter;
@@ -81,14 +80,15 @@ public class MenuListFragment extends BaseFragment {
         addDisposables(
                 viewModel
                         .getMenuObservable()
-                        .subscribeWith(new SimpleDisposable<List<Dish>>() {
-                            @Override
-                            public void onNext(List<Dish> dishes) {
-                                super.onNext(dishes);
-                                adapter.setData(dishes);
-                                adapter.notifyDataSetChanged();
-                            }
-                        }),
+                        .subscribeWith(
+                                new SimpleDisposable<List<Dish>>() {
+                                    @Override
+                                    public void onNext(List<Dish> dishes) {
+                                        super.onNext(dishes);
+                                        adapter.setData(dishes);
+                                        adapter.notifyDataSetChanged();
+                                    }
+                                }),
                 adapter
                         .getClickDishObservable()
                         .subscribeWith(
@@ -96,9 +96,19 @@ public class MenuListFragment extends BaseFragment {
                                     @Override
                                     public void onNext(Dish dish) {
                                         super.onNext(dish);
-                                        count++;
-                                        System.out.println(Thread.currentThread().toString());
-                                        tvOrderCounter.setText(String.valueOf(count));
+                                        viewModel.addPositionToCart(dish, 1);
+                                    }
+                                }
+                        ),
+                viewModel
+                        .getOrderSizeObservable()
+                        .subscribeWith(
+                                new SimpleDisposable<Integer>() {
+                                    @Override
+                                    public void onNext(Integer orderSize) {
+                                        super.onNext(orderSize);
+                                        tvOrderCounter.setText(String.valueOf(orderSize));
+                                        tvOrderCounter.setVisibility(orderSize > 0 ? View.VISIBLE : View.GONE);
                                     }
                                 }
                         )

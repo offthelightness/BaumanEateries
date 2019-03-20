@@ -14,4 +14,9 @@
         <item name="android:fontFamily">@font/google_sans</item>
     </style>
 
+    <style name="RippableView">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
 </resources>

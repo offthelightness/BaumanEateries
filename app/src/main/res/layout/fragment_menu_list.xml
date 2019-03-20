@@ -31,7 +31,6 @@
             app:layout_constraintBottom_toBottomOf="parent"/>
 
     <TextView
-            android:text="5"
             android:id="@+id/tv_order_counter"
             android:layout_width="26dp"
             android:layout_height="26dp"
@@ -41,8 +40,10 @@
             android:textColor="#FFF"
             android:textSize="10sp"
             android:textStyle="bold"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="@id/fab_order"
             app:layout_constraintTop_toTopOf="@id/fab_order"
+            tools:visibility="visible"
             tools:text="5"/>
 
 

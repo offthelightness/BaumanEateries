@@ -1,76 +1,76 @@
 [
   {
     "id": "9068995c-1964-4a40-88f8-54a3b68e87dc",
-    "name": "Суп гороховый",
+    "name": "Суп-пюре из брокколи",
     "weight": 250,
-    "price": 100,
+    "price": 60,
     "eateryType": "MAIN",
     "elements": [
       {
         "element" : "PROTEIN",
-        "count" : 2
+        "count" : 15
       },
       {
         "element" : "FAT",
-        "count" : 3
-      },
-      {
-        "element" : "CARBOHYDRATE",
-        "count" : 4
-      }
-    ],
-    "calorie": 150
-  },
-  {
-    "id": "acf8c797-8851-4b9f-a8bb-53de07f074f5",
-    "name": "Макарошки",
-    "weight": 200,
-    "price": 25,
-    "eateryType": "MAIN",
-    "elements": [
-      {
-        "element" : "PROTEIN",
         "count" : 5
       },
       {
+        "element" : "CARBOHYDRATE",
+        "count" : 20
+      }
+    ],
+    "calorie": 310
+  },
+  {
+    "id": "acf8c797-8851-4b9f-a8bb-53de07f074f5",
+    "name": "Суп гороховый с картофелем и копченостями",
+    "weight": 250,
+    "price": 50,
+    "eateryType": "MAIN",
+    "elements": [
+      {
+        "element" : "PROTEIN",
+        "count" : 10
+      },
+      {
         "element" : "FAT",
-        "count" : 6
+        "count" : 5
       },
       {
         "element" : "CARBOHYDRATE",
-        "count" : 7
+        "count" : 20
       }
     ],
     "calorie": 300
   },
   {
     "id": "eed9fe68-22e1-46a6-8b13-499df830b82e",
-    "name": "Пельмени студенческие",
-    "weight": 500,
-    "price": 350,
-    "eateryType": "PELMEN",
+    "name": "Суп картофельный с грибами, вермишелью и сметаной",
+    "weight": 250,
+    "price": 50,
+    "eateryType": "MAIN",
     "elements": [
       {
         "element" : "PROTEIN",
-        "count" : 8
+        "count" : 10
       },
       {
         "element" : "FAT",
-        "count" : 9
+        "count" : 5
       },
       {
         "element" : "CARBOHYDRATE",
-        "count" : 10
+        "count" : 20
       }
     ],
-    "calorie": 345
+    "calorie": 220
   },
   {
     "id": "7f3147a2-05ef-4d48-9679-9fefe53cf496",
-    "name": "Пельмени профессорские",
-    "weight": 400,
-    "price": 550,
-    "eateryType": "PELMEN",
+    "name": "Кабачки, тушеные с овощами",
+    "weight": 150,
+    "price": 60,
+    "eateryType": "MAIN",
     "elements": [
       {
         "element" : "PROTEIN",
@@ -85,50 +85,314 @@
         "count" : 12
       }
     ],
-    "calorie": 355
+    "calorie": 215
   },
   {
     "id": "10565cf0-5c93-4d01-9453-a6f458384817",
-    "name": "Сосиска в тесте",
-    "weight": 30,
-    "price": 49,
-    "eateryType": "PIE",
+    "name": "Картофельное пюре",
+    "weight": 150,
+    "price": 35,
+    "eateryType": "MAIN",
     "elements": [
       {
         "element" : "PROTEIN",
-        "count" : 15
+        "count" : 2.6
       },
       {
         "element" : "FAT",
-        "count" : 16
+        "count" : 2.7
       },
       {
         "element" : "CARBOHYDRATE",
-        "count" : 17
+        "count" : 13
       }
     ],
-    "calorie": 99
+    "calorie": 105
   },
   {
     "id": "54d561ba-3cb0-4b30-adac-ffb76d1f6b62",
-    "name": "Булочка с маком",
-    "weight": 20,
-    "price": 31,
+    "name": "Макароны отварные с маслом",
+    "weight": 150,
+    "price": 15,
+    "eateryType": "MAIN",
+    "elements": [
+      {
+        "element" : "PROTEIN",
+        "count" : 2
+      },
+      {
+        "element" : "FAT",
+        "count" : 3
+      },
+      {
+        "element" : "CARBOHYDRATE",
+        "count" : 15
+      }
+    ],
+    "calorie": 110
+  },
+  {
+    "id": "9ec728d3-6133-40c7-adf7-e4c3eeaca349",
+    "name": "Каша гречневая",
+    "weight": 150,
+    "price": 20,
+    "eateryType": "MAIN",
+    "elements": [
+      {
+        "element" : "PROTEIN",
+        "count" : 13
+      },
+      {
+        "element" : "FAT",
+        "count" : 3
+      },
+      {
+        "element" : "CARBOHYDRATE",
+        "count" : 57
+      }
+    ],
+    "calorie": 320
+  },
+  {
+    "id": "f5ee71e2-6bf0-44b6-873e-3fb0921d23ec",
+    "name": "Рис, припущенный в бульоне",
+    "weight": 150,
+    "price": 20,
+    "eateryType": "MAIN",
+    "elements": [
+      {
+        "element" : "PROTEIN",
+        "count" : 6
+      },
+      {
+        "element" : "FAT",
+        "count" : 7
+      },
+      {
+        "element" : "CARBOHYDRATE",
+        "count" : 23
+      }
+    ],
+    "calorie": 180
+  },
+  {
+    "id": "52e17faa-09ae-47a9-9d75-29763e1b7274",
+    "name": "Куры жареные",
+    "weight": 120,
+    "price": 95,
+    "eateryType": "MAIN",
+    "elements": [
+      {
+        "element" : "PROTEIN",
+        "count" : 26
+      },
+      {
+        "element" : "FAT",
+        "count" : 12
+      },
+      {
+        "element" : "CARBOHYDRATE",
+        "count" : 5
+      }
+    ],
+    "calorie": 250
+  },
+  {
+    "id": "ae1d1636-837f-4a17-a446-bb14f3217882",
+    "name": "Картофель, жаренный с грибами, луком",
+    "weight": 150,
+    "price": 85,
+    "eateryType": "MAIN",
+    "elements": [
+      {
+        "element" : "PROTEIN",
+        "count" : 2
+      },
+      {
+        "element" : "FAT",
+        "count" : 6
+      },
+      {
+        "element" : "CARBOHYDRATE",
+        "count" : 12
+      }
+    ],
+    "calorie": 130
+  },
+  {
+    "id": "bf4642c1-5fbc-4307-9958-069d111d43db",
+    "name": "Кольцо творожное",
+    "weight": 50,
+    "price": 45,
     "eateryType": "PIE",
     "elements": [
       {
         "element" : "PROTEIN",
-        "count" : 18
+        "count" : 3
       },
       {
         "element" : "FAT",
-        "count" : 19
+        "count" : 7
       },
       {
         "element" : "CARBOHYDRATE",
-        "count" : 20
+        "count" : 12
       }
     ],
-    "calorie": 58
+    "calorie": 110
+  },
+  {
+    "id": "f30604f3-0ecc-4967-b9d8-5ca2a1b70279",
+    "name": "Элешка со сливками",
+    "weight": 50,
+    "price": 30,
+    "eateryType": "PIE",
+    "elements": [
+      {
+        "element" : "PROTEIN",
+        "count" : 3
+      },
+      {
+        "element" : "FAT",
+        "count" : 5
+      },
+      {
+        "element" : "CARBOHYDRATE",
+        "count" : 10
+      }
+    ],
+    "calorie": 120
+  },
+  {
+    "id": "93cd6826-2f00-4806-b732-ee73913cec32",
+    "name": "Кекс творожный",
+    "weight": 70,
+    "price": 40,
+    "eateryType": "PIE",
+    "elements": [
+      {
+        "element" : "PROTEIN",
+        "count" : 2
+      },
+      {
+        "element" : "FAT",
+        "count" : 6
+      },
+      {
+        "element" : "CARBOHYDRATE",
+        "count" : 12
+      }
+    ],
+    "calorie": 130
+  },
+  {
+    "id": "7c4e6930-39b0-4ac0-9ce1-7bdfcf15fa39",
+    "name": "Сочник с творогом",
+    "weight": 50,
+    "price": 45,
+    "eateryType": "PIE",
+    "elements": [
+      {
+        "element" : "PROTEIN",
+        "count" : 4
+      },
+      {
+        "element" : "FAT",
+        "count" : 6
+      },
+      {
+        "element" : "CARBOHYDRATE",
+        "count" : 15
+      }
+    ],
+    "calorie": 140
+  },
+  {
+    "id": "7dcde889-fbef-4583-9366-a206e6318568",
+    "name": "Профессорские",
+    "weight": 150,
+    "price": 119,
+    "eateryType": "PELMEN",
+    "elements": [
+      {
+        "element" : "PROTEIN",
+        "count" : 11
+      },
+      {
+        "element" : "FAT",
+        "count" : 12
+      },
+      {
+        "element" : "CARBOHYDRATE",
+        "count" : 29
+      }
+    ],
+    "calorie": 275
+  },
+  {
+    "id": "577feebf-afde-4d88-8abb-553161938f30",
+    "name": "Буренка",
+    "weight": 150,
+    "price": 109,
+    "eateryType": "PELMEN",
+    "elements": [
+      {
+        "element" : "PROTEIN",
+        "count" : 10
+      },
+      {
+        "element" : "FAT",
+        "count" : 12
+      },
+      {
+        "element" : "CARBOHYDRATE",
+        "count" : 270
+      }
+    ],
+    "calorie": 130
+  },
+  {
+    "id": "a87db4e4-9a70-476e-b1a7-eebeb4b164b8",
+    "name": "Птичьи радости",
+    "weight": 150,
+    "price": 89,
+    "eateryType": "PELMEN",
+    "elements": [
+      {
+        "element" : "PROTEIN",
+        "count" : 10
+      },
+      {
+        "element" : "FAT",
+        "count" : 10
+      },
+      {
+        "element" : "CARBOHYDRATE",
+        "count" : 12
+      }
+    ],
+    "calorie": 200
+  },
+  {
+    "id": "07b90409-5026-46fd-bd37-e2a5685e779c",
+    "name": "Студенческие",
+    "weight": 150,
+    "price": 85,
+    "eateryType": "PELMEN",
+    "elements": [
+      {
+        "element" : "PROTEIN",
+        "count" : 10
+      },
+      {
+        "element" : "FAT",
+        "count" : 12
+      },
+      {
+        "element" : "CARBOHYDRATE",
+        "count" : 12
+      }
+    ],
+    "calorie": 190
   }
 ]

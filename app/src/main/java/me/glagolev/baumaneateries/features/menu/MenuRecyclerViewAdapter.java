@@ -43,12 +43,7 @@ public class MenuRecyclerViewAdapter extends RecyclerView.Adapter<MenuRecyclerVi
 
     @Override
     public void onBindViewHolder(@NonNull MenuViewHolder holder, int position) {
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickDishSubject.onNext(new Dish());
-            }
-        });
+        holder.itemView.setOnClickListener(v -> clickDishSubject.onNext(new Dish()));
         holder.tvName.setText(data.get(position).getName());
         holder.tvPrice.setText(String.format("%s \u20BD", data.get(position).getPrice()));
         holder.tvWeight.setText(String.format("%s г", data.get(position).getWeight()));

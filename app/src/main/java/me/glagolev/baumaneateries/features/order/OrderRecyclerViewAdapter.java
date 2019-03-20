@@ -6,7 +6,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,10 +17,12 @@ import me.glagolev.baumaneateries.features.menu.model.Dish;
 
 public class OrderRecyclerViewAdapter extends RecyclerView.Adapter<OrderRecyclerViewAdapter.OrderViewHolder> {
 
-    private List<Dish> data = new ArrayList<>();
+    private Map<Dish, Integer> dataMap = new HashMap<>();
+    private List<Dish> dataList = new ArrayList<>();
 
-    public void setData(List<Dish> data) {
-        this.data = data;
+    public void setDataMap(Map<Dish, Integer> dataMap) {
+        this.dataMap = dataMap;
+        dataList = new ArrayList<>(dataMap.keySet());
     }
 
     @NonNull
@@ -28,27 +32,25 @@ public class OrderRecyclerViewAdapter extends RecyclerView.Adapter<OrderRecycler
                 .inflate(R.layout.item_order, parent, false));
     }
 
-    //TODO добавить количество позиций(какая нибудь Map может быть)
     @Override
     public void onBindViewHolder(@NonNull OrderViewHolder holder, int position) {
-        holder.tvName.setText(data.get(position).getName());
+        holder.tvName.setText(dataList.get(position).getName());
+        holder.tvCount.setText(String.format("%d шт.", dataMap.get(dataList.get(position))));
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return dataList.size();
     }
 
     static class OrderViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView tvName, tvPrice, tvCount;
+        private TextView tvName, tvCount;
 
         public OrderViewHolder(@NonNull View itemView) {
             super(itemView);
             tvName = itemView.findViewById(R.id.tv_name_order);
-            tvPrice = itemView.findViewById(R.id.tv_price_order);
             tvCount = itemView.findViewById(R.id.tv_count_order);
-
         }
     }
 }

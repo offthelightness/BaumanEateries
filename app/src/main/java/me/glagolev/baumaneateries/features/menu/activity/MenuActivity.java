@@ -9,6 +9,10 @@ import me.glagolev.baumaneateries.core.ui.BaseActivity;
 import me.glagolev.baumaneateries.features._common.Screens;
 import me.glagolev.baumaneateries.features.eateries.model.EateryType;
 
+/**
+ * Является точкой входа для flow MENU,
+ * состоящее из экрана со списком блюд
+ */
 public class MenuActivity extends BaseActivity {
 
 

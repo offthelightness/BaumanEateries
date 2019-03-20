@@ -21,6 +21,9 @@ import me.glagolev.baumaneateries.features.menu.model.Dish;
 import me.glagolev.baumaneateries.features.order.OrderRecyclerViewAdapter;
 import me.glagolev.baumaneateries.features.order.viewmodel.OrderViewModel;
 
+/**
+ * Экран с выбранными блюдами и итоговой информацией
+ */
 public class OrderFragment extends BaseFragment {
 
     private RecyclerView recyclerView;

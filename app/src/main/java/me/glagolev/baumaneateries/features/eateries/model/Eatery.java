@@ -1,5 +1,8 @@
 package me.glagolev.baumaneateries.features.eateries.model;
 
+/**
+ * Модель столовой с необходимыми данными
+ */
 public class Eatery {
 
     private String id;

@@ -12,6 +12,9 @@ import me.glagolev.baumaneateries.core.repo.BaseRepository;
 import me.glagolev.baumaneateries.features.eateries.model.Eatery;
 import me.glagolev.baumaneateries.features.eateries.model.EateryType;
 
+/**
+ * Предоставляет список столовых
+ */
 public class EateriesRepository extends BaseRepository {
 
     private Context context;

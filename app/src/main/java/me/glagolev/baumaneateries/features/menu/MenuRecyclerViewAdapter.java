@@ -17,6 +17,9 @@ import me.glagolev.baumaneateries.R;
 import me.glagolev.baumaneateries.features.menu.model.Dish;
 import me.glagolev.baumaneateries.features.menu.model.Element;
 
+/**
+ * Адаптер списка блюд
+ */
 public class MenuRecyclerViewAdapter extends RecyclerView.Adapter<MenuRecyclerViewAdapter.MenuViewHolder> {
 
     private List<Dish> data = new ArrayList<>();

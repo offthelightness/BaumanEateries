@@ -11,6 +11,9 @@ import me.glagolev.baumaneateries.features.eateries.EateriesRepository;
 import me.glagolev.baumaneateries.features.eateries.model.Eatery;
 import me.glagolev.baumaneateries.features.eateries.model.EateryType;
 
+/**
+ * Содержит бизнес-логику экрана информации о столовой
+ */
 public class EateryDetailsViewModel extends BaseViewModel {
 
     private EateriesRepository eateriesRepository;

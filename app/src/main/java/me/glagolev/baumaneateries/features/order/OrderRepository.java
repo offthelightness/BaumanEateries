@@ -9,6 +9,9 @@ import io.reactivex.subjects.BehaviorSubject;
 import me.glagolev.baumaneateries.core.repo.BaseRepository;
 import me.glagolev.baumaneateries.features.menu.model.Dish;
 
+/**
+ * Предоставляет список выбранных блюд
+ */
 public class OrderRepository extends BaseRepository {
 
     private BehaviorSubject<Map<Dish, Integer>> orderSubject = BehaviorSubject.createDefault(new HashMap<>());

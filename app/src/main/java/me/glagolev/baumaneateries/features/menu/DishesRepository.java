@@ -13,6 +13,9 @@ import me.glagolev.baumaneateries.core.repo.BaseRepository;
 import me.glagolev.baumaneateries.features.eateries.model.EateryType;
 import me.glagolev.baumaneateries.features.menu.model.Dish;
 
+/**
+ * Предоставляет список блюд
+ */
 public class DishesRepository extends BaseRepository {
 
     private Context context;

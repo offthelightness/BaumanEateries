@@ -16,6 +16,9 @@ import me.glagolev.baumaneateries.features.menu.DishesRepository;
 import me.glagolev.baumaneateries.features.menu.model.Dish;
 import me.glagolev.baumaneateries.features.order.OrderRepository;
 
+/**
+ * Содержит бизнес-логику экрана со списком блюд
+ */
 public class MenuListViewModel extends BaseViewModel {
 
     private DishesRepository dishesRepository;

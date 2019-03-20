@@ -25,6 +25,9 @@ import me.glagolev.baumaneateries.features.menu.MenuRecyclerViewAdapter;
 import me.glagolev.baumaneateries.features.menu.model.Dish;
 import me.glagolev.baumaneateries.features.menu.viewmodel.MenuListViewModel;
 
+/**
+ * Экран со списком блюд, подаваемых в выбранной столовой
+ */
 public class MenuListFragment extends BaseFragment {
 
     private RecyclerView recyclerView;

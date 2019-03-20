@@ -17,6 +17,9 @@ import me.glagolev.baumaneateries.features.eateries.EateriesRepository;
 import me.glagolev.baumaneateries.features.eateries.model.Eatery;
 import me.glagolev.baumaneateries.features.eateries.model.EateryType;
 
+/**
+ * Содержит бизнес-логику для экрана со списком столовых
+ */
 public class EateriesListViewModel extends BaseViewModel {
 
     private Map<EateryType, String> formattedScheduleMap = new HashMap<>();

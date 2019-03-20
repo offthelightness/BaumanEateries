@@ -4,6 +4,10 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+/**
+ * Базовый класс для хранение и предоставление данных не зависящий от жизненного цикла
+ * ViewController'ов. Содержит метод readJsonFile для представления json-файла в виде строки
+ */
 public abstract class BaseRepository {
 
     protected String readJsonFile(InputStream inputStream) {

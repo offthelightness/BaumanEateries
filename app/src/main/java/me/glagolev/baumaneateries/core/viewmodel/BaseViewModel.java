@@ -9,6 +9,14 @@ import io.reactivex.disposables.Disposable;
 import me.glagolev.baumaneateries.core.BaumanEateriesApplication;
 import ru.terrakok.cicerone.Router;
 
+/**
+ * Базовый ViewModel класс, используемый в приложений для сокрытия бизнес-логики
+ * и исключения ее из Fragment'ов во избежания создания GodObject'ов.
+ * Также предоставляет экземляр класса Router для навигации внутри приложения
+ * и содержит вспомогательный метод addDisposables(Disposable... disposables)
+ * для автоматического управления rx-подписками в соотвествии с lifecycle Fragment'a
+ * с которым связана ViewModel
+ */
 public abstract class BaseViewModel extends AndroidViewModel {
 
     protected Router router;

@@ -8,6 +8,11 @@ import me.glagolev.baumaneateries.core.BaumanEateriesApplication;
 import ru.terrakok.cicerone.Router;
 import ru.terrakok.cicerone.android.support.SupportAppNavigator;
 
+/**
+ * Базовый Activity класс содержащию общую логику установки и очистки
+ * SupportAppNavigator() определния контейнеров для Fragment, также предоставляет экземляр
+ * класса Router для навигации внутри приложения
+ */
 public abstract class BaseActivity extends AppCompatActivity {
 
     protected Router router;

@@ -11,6 +11,10 @@ import ru.terrakok.cicerone.Cicerone;
 import ru.terrakok.cicerone.NavigatorHolder;
 import ru.terrakok.cicerone.Router;
 
+/**
+ * Класс Application, инициализирует и предоставляет Repositories
+ * - хранилища данных и сотояния приложения
+ */
 public class BaumanEateriesApplication extends Application {
 
     public static BaumanEateriesApplication INSTANCE;

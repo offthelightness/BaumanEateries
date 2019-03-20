@@ -308,6 +308,28 @@
     "calorie": 140
   },
   {
+    "id": "c6bb4629-da48-4706-8d68-e7725cad4ff4",
+    "name": "Булочка с сыром",
+    "weight": 60,
+    "price": 55,
+    "eateryType": "PIE",
+    "elements": [
+      {
+        "element" : "PROTEIN",
+        "count" : 6
+      },
+      {
+        "element" : "FAT",
+        "count" : 7
+      },
+      {
+        "element" : "CARBOHYDRATE",
+        "count" : 15
+      }
+    ],
+    "calorie": 160
+  },
+  {
     "id": "7dcde889-fbef-4583-9366-a206e6318568",
     "name": "Профессорские",
     "weight": 150,

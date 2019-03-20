@@ -1,10 +1,13 @@
 package me.glagolev.baumaneateries.features.menu.fragment;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -26,13 +29,12 @@ public class MenuListFragment extends BaseFragment {
 
     private RecyclerView recyclerView;
     private MenuRecyclerViewAdapter adapter;
+
+    private TextView tvOrderCounter;
+    private FloatingActionButton fabOrder;
+
     private MenuListViewModel viewModel;
     private EateryType eateryType;
-    private TextView tvOrderCounter;
-
-
-    //TODO
-    private int count = 0;
 
     public static MenuListFragment newInstance(EateryType type) {
         MenuListFragment fragment = new MenuListFragment();
@@ -54,24 +56,25 @@ public class MenuListFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_menu_list, container, false);
-
+        View view = inflater.inflate(R.layout.fragment_menu_list, container, false);
+        recyclerView = view.findViewById(R.id.rv_menu);
+        tvOrderCounter = view.findViewById(R.id.tv_order_counter);
+        fabOrder = view.findViewById(R.id.fab_order);
+        return view;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        recyclerView = view.findViewById(R.id.rv_menu);
-        tvOrderCounter = view.findViewById(R.id.tv_order_counter);
-
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
         adapter = new MenuRecyclerViewAdapter();
         recyclerView.setAdapter(adapter);
 
+        fabOrder.setOnClickListener(v-> viewModel.openOrder());
+
         viewModel.init();
-        viewModel.loadDishes();
+        viewModel.loadDishes(eateryType);
     }
 
     @Override
@@ -111,7 +114,17 @@ public class MenuListFragment extends BaseFragment {
                                         tvOrderCounter.setVisibility(orderSize > 0 ? View.VISIBLE : View.GONE);
                                     }
                                 }
-                        )
+                        ),
+                viewModel
+                        .getEmptyOrderObservable()
+                        .subscribeWith(new SimpleDisposable<Boolean>() {
+                            @Override
+                            public void onNext(Boolean aBoolean) {
+                                super.onNext(aBoolean);
+                                Toast.makeText(getContext(), "Корзина пуста", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+
         );
     }
 }

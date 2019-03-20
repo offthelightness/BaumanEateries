@@ -15,8 +15,8 @@ public abstract class BaseFragment extends Fragment {
     }
 
     @Override
-    public void onDestroy() {
+    public void onPause() {
         compositeDisposable.clear();
-        super.onDestroy();
+        super.onPause();
     }
 }

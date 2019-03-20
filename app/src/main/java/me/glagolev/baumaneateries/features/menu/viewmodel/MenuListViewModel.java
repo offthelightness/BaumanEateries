@@ -3,13 +3,14 @@ package me.glagolev.baumaneateries.features.menu.viewmodel;
 import android.app.Application;
 
 import java.util.List;
-import java.util.Map;
 
 import androidx.annotation.NonNull;
 import io.reactivex.Observable;
 import io.reactivex.subjects.BehaviorSubject;
+import io.reactivex.subjects.PublishSubject;
 import me.glagolev.baumaneateries.core.BaumanEateriesApplication;
 import me.glagolev.baumaneateries.core.viewmodel.BaseViewModel;
+import me.glagolev.baumaneateries.features._common.Screens;
 import me.glagolev.baumaneateries.features.eateries.model.EateryType;
 import me.glagolev.baumaneateries.features.menu.DishesRepository;
 import me.glagolev.baumaneateries.features.menu.model.Dish;
@@ -21,19 +22,19 @@ public class MenuListViewModel extends BaseViewModel {
     private OrderRepository orderRepository;
 
     private BehaviorSubject<List<Dish>> menuSubjects = BehaviorSubject.create();
-    private BehaviorSubject<Map<Dish, Integer>> orderSubjects = BehaviorSubject.create();
     private BehaviorSubject<Integer> orderSizeSubjects = BehaviorSubject.create();
+    private PublishSubject<Boolean> emptyOrderSubjects = PublishSubject.create();
 
     public Observable<List<Dish>> getMenuObservable() {
         return menuSubjects.hide();
     }
 
-    public Observable<Map<Dish, Integer>> getOrderObservable() {
-        return orderSubjects.hide();
-    }
-
     public Observable<Integer> getOrderSizeObservable() {
         return orderSizeSubjects.hide();
+    }
+
+    public Observable<Boolean> getEmptyOrderObservable() {
+        return emptyOrderSubjects.hide();
     }
 
     public MenuListViewModel(@NonNull Application application) {
@@ -41,9 +42,6 @@ public class MenuListViewModel extends BaseViewModel {
         dishesRepository = ((BaumanEateriesApplication) application).getDishesRepository();
         orderRepository = ((BaumanEateriesApplication) application).getOrderRepository();
         addDisposables(
-                orderRepository
-                        .getOrderObservable()
-                        .subscribe(orderSubjects::onNext),
                 orderRepository
                         .getOrderSizeObservable()
                         .subscribe(orderSizeSubjects::onNext)
@@ -65,5 +63,13 @@ public class MenuListViewModel extends BaseViewModel {
 
     public void addPositionToCart(Dish dish, Integer count) {
         orderRepository.addPosition(dish, count);
+    }
+
+    public void openOrder() {
+        if (orderSizeSubjects.getValue() == 0) {
+            emptyOrderSubjects.onNext(true);
+        } else {
+            router.navigateTo(new Screens.OrderScreen());
+        }
     }
 }

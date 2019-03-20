@@ -9,6 +9,8 @@ import me.glagolev.baumaneateries.features.eateries.fragment.EateryDetailsFragme
 import me.glagolev.baumaneateries.features.eateries.model.EateryType;
 import me.glagolev.baumaneateries.features.menu.activity.MenuActivity;
 import me.glagolev.baumaneateries.features.menu.fragment.MenuListFragment;
+import me.glagolev.baumaneateries.features.order.activity.OrderActivity;
+import me.glagolev.baumaneateries.features.order.fragment.OrderFragment;
 import ru.terrakok.cicerone.android.support.SupportAppScreen;
 
 public class Screens {
@@ -66,6 +68,21 @@ public class Screens {
         @Override
         public Fragment getFragment() {
             return MenuListFragment.newInstance(type);
+        }
+    }
+
+    // order feature navigation
+    public static final class OrderScreen extends SupportAppScreen {
+        @Override
+        public Intent getActivityIntent(Context context) {
+            return new Intent(context, OrderActivity.class);
+        }
+    }
+
+    public static final class OrderDetailsScreen extends SupportAppScreen {
+        @Override
+        public Fragment getFragment() {
+            return new OrderFragment();
         }
     }
 }

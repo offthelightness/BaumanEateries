@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import io.reactivex.Observable;
-import io.reactivex.subjects.BehaviorSubject;
+import io.reactivex.subjects.PublishSubject;
 import me.glagolev.baumaneateries.R;
 import me.glagolev.baumaneateries.features.menu.model.Dish;
 import me.glagolev.baumaneateries.features.menu.model.Element;
@@ -28,7 +28,7 @@ public class MenuRecyclerViewAdapter extends RecyclerView.Adapter<MenuRecyclerVi
         }
     }
 
-    private BehaviorSubject<Dish> clickDishSubject = BehaviorSubject.create();
+    private PublishSubject<Dish> clickDishSubject = PublishSubject.create();
 
     public Observable<Dish> getClickDishObservable() {
         return clickDishSubject.hide();

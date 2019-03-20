@@ -14,14 +14,14 @@
         app:cardCornerRadius="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_container"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:background="@color/primary_dark"
             tools:layout_height="120dp"
             android:clickable="true"
             android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            >
+            android:foreground="?android:attr/selectableItemBackground">
 
         <TextView
                 android:id="@+id/tv_name"

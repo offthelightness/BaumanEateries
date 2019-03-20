@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import io.reactivex.Observable;
 import io.reactivex.subjects.BehaviorSubject;
@@ -38,12 +39,12 @@ public class MenuRecyclerViewAdapter extends RecyclerView.Adapter<MenuRecyclerVi
     public MenuViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         MenuViewHolder menuViewHolder = new MenuViewHolder(LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_dish, parent, false));
+        menuViewHolder.clContainer.setOnClickListener(v -> clickDishSubject.onNext(new Dish()));
         return menuViewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull MenuViewHolder holder, int position) {
-        holder.itemView.setOnClickListener(v -> clickDishSubject.onNext(new Dish()));
         holder.tvName.setText(data.get(position).getName());
         holder.tvPrice.setText(String.format("%s \u20BD", data.get(position).getPrice()));
         holder.tvWeight.setText(String.format("%s г", data.get(position).getWeight()));
@@ -66,10 +67,12 @@ public class MenuRecyclerViewAdapter extends RecyclerView.Adapter<MenuRecyclerVi
 
     static class MenuViewHolder extends RecyclerView.ViewHolder {
 
+        private ConstraintLayout clContainer;
         private TextView tvName, tvPrice, tvWeight, tvCalorie, tvPFC;
 
         public MenuViewHolder(@NonNull View itemView) {
             super(itemView);
+            clContainer = itemView.findViewById(R.id.cl_container);
             tvName = itemView.findViewById(R.id.tv_name);
             tvPrice = itemView.findViewById(R.id.tv_price);
             tvWeight = itemView.findViewById(R.id.tv_weight);

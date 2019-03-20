@@ -39,7 +39,7 @@ public class MenuRecyclerViewAdapter extends RecyclerView.Adapter<MenuRecyclerVi
     public MenuViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         MenuViewHolder menuViewHolder = new MenuViewHolder(LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_dish, parent, false));
-        menuViewHolder.clContainer.setOnClickListener(v -> clickDishSubject.onNext(new Dish()));
+        menuViewHolder.clContainer.setOnClickListener(v -> clickDishSubject.onNext(data.get(menuViewHolder.getAdapterPosition())));
         return menuViewHolder;
     }
 

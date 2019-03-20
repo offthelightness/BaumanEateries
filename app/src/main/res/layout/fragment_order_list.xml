@@ -59,38 +59,54 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/tv_total_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginBottom="8dp"
-        android:text="Общая стоимость: 999 ₽"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@id/tv_total_calorie"
-        app:layout_constraintStart_toStartOf="parent" />
+            android:id="@+id/tv_total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp"
+            android:text="Общая стоимость: 999 ₽"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/tv_total_calorie"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textAlignment="textStart"/>
 
     <TextView
-        android:id="@+id/tv_total_calorie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="16dp"
-        android:text="Общая калорийность: 150 кКал"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/tv_total_price" />
+            android:id="@+id/tv_total_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Всего: 36шт"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp"
+            android:textAlignment="textEnd"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_total_price"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
 
     <TextView
-        android:id="@+id/tv_total_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="24 позиции"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="18sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tv_total_price"
-        app:layout_constraintEnd_toEndOf="parent" />
+            android:id="@+id/tv_total_calorie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Калорийность: 150 кКал"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@id/tv_total_price"
+            app:layout_constraintBottom_toTopOf="@id/tv_total_pfc"
+            android:textAlignment="textStart"/>
+
+    <TextView
+            android:id="@+id/tv_total_pfc"
+            android:text="БЖУ 10 /10/30 "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:textAlignment="textStart"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@id/tv_total_price"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

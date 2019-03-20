@@ -27,7 +27,7 @@ public class OrderFragment extends BaseFragment {
     private OrderRecyclerViewAdapter adapter;
     private OrderViewModel viewModel;
 
-    private TextView tvTotalPrice, tvTotalCalorie, tvTotalCount;
+    private TextView tvTotalPrice, tvTotalCalorie, tvTotalCount, tvTotalPFC;
     private ImageView ivClose;
 
     @Override
@@ -42,9 +42,12 @@ public class OrderFragment extends BaseFragment {
         View view = inflater.inflate(R.layout.fragment_order_list, container, false);
 
         recyclerView = view.findViewById(R.id.rv_order);
+
         tvTotalPrice = view.findViewById(R.id.tv_total_price);
         tvTotalCalorie = view.findViewById(R.id.tv_total_calorie);
         tvTotalCount = view.findViewById(R.id.tv_total_count);
+        tvTotalPFC = view.findViewById(R.id.tv_total_pfc);
+
         ivClose = view.findViewById(R.id.iv_close_order);
         ivClose.setOnClickListener(v -> viewModel.close());
 
@@ -76,6 +79,7 @@ public class OrderFragment extends BaseFragment {
                                 tvTotalPrice.setText(viewModel.getTotalPriceString(dishIntegerMap));
                                 tvTotalCalorie.setText(viewModel.getTotalCalorieString(dishIntegerMap));
                                 tvTotalCount.setText(viewModel.getTotalCountString(dishIntegerMap));
+                                tvTotalPFC.setText(viewModel.getTotalPFCString(dishIntegerMap));
                                 adapter.setDataMap(dishIntegerMap);
                                 adapter.notifyDataSetChanged();
                             }

@@ -96,11 +96,11 @@
     "elements": [
       {
         "element" : "PROTEIN",
-        "count" : 2.6
+        "count" : 2
       },
       {
         "element" : "FAT",
-        "count" : 2.7
+        "count" : 2
       },
       {
         "element" : "CARBOHYDRATE",

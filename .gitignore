@@ -66,3 +66,5 @@ fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
 !/sample/app-debug.apk
+.idea/codeStyles/Project.xml
+.idea/misc.xml

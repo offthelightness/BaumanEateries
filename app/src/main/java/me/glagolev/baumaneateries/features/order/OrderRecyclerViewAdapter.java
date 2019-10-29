@@ -15,6 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import me.glagolev.baumaneateries.R;
 import me.glagolev.baumaneateries.features.menu.model.Dish;
 
+/**
+ * Адаптер списка выбранных блюд
+ */
 public class OrderRecyclerViewAdapter extends RecyclerView.Adapter<OrderRecyclerViewAdapter.OrderViewHolder> {
 
     private Map<Dish, Integer> dataMap = new HashMap<>();

@@ -18,6 +18,9 @@ import me.glagolev.baumaneateries.features.eateries.model.Eatery;
 import me.glagolev.baumaneateries.features.eateries.model.EateryType;
 import me.glagolev.baumaneateries.features.eateries.viewmodel.EateryDetailsViewModel;
 
+/**
+ * Экран с подробной информацие о выбранной столовой
+ */
 public class EateryDetailsFragment extends BaseFragment {
 
     private EateryDetailsViewModel viewModel;

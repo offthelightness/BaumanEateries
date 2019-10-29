@@ -6,6 +6,10 @@ import me.glagolev.baumaneateries.R;
 import me.glagolev.baumaneateries.core.ui.BaseActivity;
 import me.glagolev.baumaneateries.features._common.Screens;
 
+/**
+ * Является точкой входа для flow EATERIES, состоящее из экранов
+ * список столовых, детальная информация о столовых
+ */
 public class EateriesActivity extends BaseActivity {
 
     @Override

@@ -4,6 +4,9 @@ import java.util.List;
 
 import me.glagolev.baumaneateries.features.eateries.model.EateryType;
 
+/**
+ * Модель блюда
+ */
 public class Dish {
 
     private String id;

@@ -22,6 +22,9 @@ import me.glagolev.baumaneateries.features.eateries.viewmodel.EateriesListViewMo
 
 import static me.glagolev.baumaneateries.features.eateries.model.EateryType.MAIN;
 
+/**
+ * Экран со списком столовых
+ */
 public class EateriesListFragment extends BaseFragment {
 
     private EateriesListViewModel viewModel;
